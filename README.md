@@ -48,21 +48,6 @@ MCP-Net/
    cd MCP-Net
 ````
 
-2. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. (Optional) Create a virtual environment:
-
-   ```bash
-   python -m venv mcpnet_env
-   source mcpnet_env/bin/activate   # Linux/macOS
-   mcpnet_env\Scripts\activate      # Windows
-   ```
-
----
 
 ## 📊 Dataset
 
