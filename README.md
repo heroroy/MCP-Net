@@ -1,5 +1,3 @@
----
-
 ````markdown
 # MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints through Global Context Integration and Attention Mechanisms
 
