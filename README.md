@@ -37,17 +37,6 @@ MCP-Net/
 ├─ requirements.txt
 ├─ README.md
 
-````
-
----
-
-## ⚙️ Installation & Requirements
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/MCP-Net.git
-   cd MCP-Net
-````
-
 
 ## 📊 Dataset
 
