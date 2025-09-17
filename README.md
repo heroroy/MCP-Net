@@ -1,121 +1,129 @@
 ---
 
-# 📄 `README.md`
+````markdown
+# MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints through Global Context Integration and Attention Mechanisms
 
-```markdown
-# MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 
-Official implementation of the paper:  
-**"MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints through Global Context Integration and Attention Mechanisms"**  
-_Submitted to The Visual Computer, 2025_
+> **Note:** This code is directly related to the manuscript submitted to *The Visual Computer*.  
+> Please cite the manuscript if you use this repository in your work.
 
 ---
 
-## 🔹 Overview
-MCP-Net is a deep learning framework for detecting rheumatoid arthritis (RA) in **Metacarpophalangeal (MCP) joints** using ultrasound images.  
-The architecture integrates:
+## 📖 Overview
 
-- **ResNet50 backbone** for robust feature extraction  
-- **Global Context integration** for joint-level representation  
-- **Channel & Spatial Attention mechanisms** for enhanced feature selection  
-- **Classification head** for final decision making  
+This repository contains the official implementation of:
 
-This combination improves RA detection performance by leveraging both **global contextual cues** and **fine-grained local attention**.
+> **MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints through Global Context Integration and Attention Mechanisms**  
+> Hiranmoy Roy, Debotosh Bhattacharjee, *The Visual Computer* (2025).
+
+MCP-Net introduces:
+- **Global Context Integration** – captures long-range dependencies in ultrasound images of MCP joints.  
+- **Attention Mechanisms** – combines channel and spatial attention to emphasize disease-relevant regions.  
+- **Lightweight and Reproducible Implementation** – code is modular, with clean APIs for dataset loading, training, and evaluation.
+
+---
+
+## ⚙️ Dependencies & Requirements
+
+- Python 3.8 or later  
+- PyTorch >= 1.12  
+- torchvision >= 0.13  
+- numpy, pandas, scikit-learn  
+- matplotlib, seaborn (visualization)  
+- tqdm (progress bars)  
+- albumentations (data augmentation)  
+
+Install all dependencies with:
+
+```bash
+pip install -r requirements.txt
+````
+
+Or create a conda environment:
+
+```bash
+conda create -n mcpnet python=3.8
+conda activate mcpnet
+pip install -r requirements.txt
+```
 
 ---
 
 ## 📂 Repository Structure
+
+```
+MCP-Net/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── CITATION.cff
+├── configs/
+│   └── train_config.yaml
+├── src/
+│   ├── __init__.py
+│   ├── dataset.py
+│   ├── model.py
+│   ├── train.py
+│   ├── eval.py
+│   └── infer.py
+├── notebooks/
+│   ├── MCP_Net_demo.ipynb
+│   └── setup_demo_data.py
+└── .gitignore
 ```
 
-MCP-Net/
-├─ src/
-│  ├─ models.py    # MCP-Net architecture
-│  ├─ dataset.py   # Dataset loader & preprocessing
-│  ├─ train.py     # Training loop
-│  ├─ eval.py      # Evaluation & metrics
-│  └─ utils.py     # Helper functions
-├─ requirements.txt
-├─ README.md
+---
 
+## 🧩 Key Algorithms
 
-## 📊 Dataset
-
-* The framework is designed for **ultrasound MCP joint images**.
-* Training data should be organized as:
-
-  ```
-  data/
-  ├─ train/
-  │  ├─ class_0/
-  │  ├─ class_1/
-  ├─ val/
-  │  ├─ class_0/
-  │  ├─ class_1/
-  ├─ test/
-     ├─ class_0/
-     ├─ class_1/
-  ```
-* Replace `class_0`, `class_1` with your dataset labels (e.g., *healthy*, *RA*).
+* **Global Context Block** – models long-range feature dependencies with context modeling.
+* **Dual Attention Module** – fuses spatial and channel attention for improved feature weighting.
+* **Loss Function** – standard cross-entropy with optional class balancing for imbalanced datasets.
 
 ---
 
 ## 🚀 Usage
 
-### Train the Model
+### 1. Training
 
 ```bash
-python src/train.py --data_root ./data --epochs 50 --batch_size 32 --save_dir results/
+python src/train.py --config configs/train_config.yaml
 ```
 
-### Evaluate the Model
+### 2. Evaluation
 
 ```bash
-python src/eval.py --model_path results/best_model.h5 --data_root ./data/test
+python src/eval.py --checkpoint checkpoints/mcpnet_best.pth
 ```
 
-### Expected Outputs
+### 3. Inference (single image)
 
-* Model checkpoints in `results/checkpoints/`
-* Training logs in `results/logs/`
-* Evaluation metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
-
----
-
-## 📑 Citation
-
-If you use this code, please cite:
-
-```
-H. Roy et al.,
-"MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints
-through Global Context Integration and Attention Mechanisms",
-submitted to The Visual Computer, 2025.
-```
-
-**DOI (code & data):** \[insert Zenodo DOI here]
-**GitHub repo:** [https://github.com/](https://github.com/)<your-username>/MCP-Net
-
----
-
-## 📌 Notes
-
-* This code is directly associated with the manuscript submitted to *The Visual Computer*.
-* Readers are encouraged to cite the manuscript when using this repository.
-* For long-term archival, the repository is mirrored on Zenodo.
-
----
-
-## 🙏 Acknowledgements
-
-* TensorFlow/Keras for deep learning framework
-* ResNet backbone pretrained on ImageNet
-* Ultrasound dataset (institutional source; data sharing subject to ethical approval)
-
----
-
+```bash
+python src/infer.py --image path/to/image.png --checkpoint checkpoints/mcpnet_best.pth
 ```
 
 ---
 
-👉 Do you want me to also prepare a **`requirements.txt`** (with TensorFlow/Keras + dependencies) and a **MIT `LICENSE` file** so your repo is fully ready for GitHub + Zenodo archival?
+## 📊 Dataset
+
+* The original ultrasound dataset of MCP joints cannot be redistributed due to clinical privacy.
+* A **toy demo dataset** is provided via `notebooks/setup_demo_data.py` to validate installation and run pipeline tests.
+* For real experiments, please follow the instructions in the manuscript for dataset access.
+
+---
+
+## 🔍 Demo Notebook
+
+Try the quick-start demo:
+
+```bash
+jupyter notebook notebooks/MCP_Net_demo.ipynb
+```
+
+This runs preprocessing → model inference → visualization on the toy dataset.
+
+---
+ould you like me to also prepare the **GitHub Release Notes text** (so you can paste it directly when you make your v1.0.0 release)?
 ```
