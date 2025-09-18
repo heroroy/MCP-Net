@@ -62,7 +62,7 @@ MCP-Net/
 │   ├── model.py
 │   ├── train.py
 │   ├── eval.py
-│   └── infer.py
+│   └── utils.py
 ├── notebooks/
 │   ├── MCP_Net_demo.ipynb
 └── .gitignore
