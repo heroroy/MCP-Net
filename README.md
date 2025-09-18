@@ -103,7 +103,7 @@ python src/infer.py --image path/to/image.png --checkpoint checkpoints/mcpnet_be
 ## 📊 Dataset
 
 * The original ultrasound dataset of MCP joints cannot be redistributed due to clinical privacy.
-* A **toy demo dataset** is provided via `MCP_arthritis` to validate and run pipeline tests.
+* A **toy demo dataset** is provided via `Arthritis` to validate and run pipeline tests.
 * For real experiments, please mail to rtewari4891@gmail.com to access the dataset.
 
 ---
