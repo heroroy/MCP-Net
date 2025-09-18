@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 
-> **Note:** This code is directly related to the manuscript submitted to *The Visual Computer*.  
+> **Note:** This code is directly related to a manuscript submitted to a *Springer Journal*.  
 > Please cite the manuscript if you use this repository in your work.
 
 ---
@@ -13,7 +13,7 @@
 This repository contains the official implementation of:
 
 > **MCP-Net: Enhancing Rheumatoid Arthritis Detection in Metacarpophalangeal Joints through Global Context Integration and Attention Mechanisms**  
-> Hiranmoy Roy, Debotosh Bhattacharjee, *The Visual Computer* (2025).
+> Rakhi Tewari, Debotosh Bhattacharjee, Hiranmoy Roy *The manuscript submitted to Springer Journal* (2025).
 
 MCP-Net introduces:
 - **Global Context Integration** – captures long-range dependencies in ultrasound images of MCP joints.  
@@ -106,8 +106,8 @@ python src/infer.py --image path/to/image.png --checkpoint checkpoints/mcpnet_be
 ## 📊 Dataset
 
 * The original ultrasound dataset of MCP joints cannot be redistributed due to clinical privacy.
-* A **toy demo dataset** is provided via `notebooks/setup_demo_data.py` to validate installation and run pipeline tests.
-* For real experiments, please follow the instructions in the manuscript for dataset access.
+* A **toy demo dataset** is provided via `MCP_arthritis` to validate and run pipeline tests.
+* For real experiments, please mail to rtewari4891@gmail.com to access the dataset.
 
 ---
 
@@ -122,5 +122,5 @@ jupyter notebook notebooks/MCP_Net_demo.ipynb
 This runs preprocessing → model inference → visualization on the toy dataset.
 
 ---
-ould you like me to also prepare the **GitHub Release Notes text** (so you can paste it directly when you make your v1.0.0 release)?
+Would you like me to also prepare the **GitHub Release Notes text** (so you can paste it directly when you make your v1.0.0 release)?
 ```
