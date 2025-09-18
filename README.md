@@ -108,16 +108,8 @@ python src/infer.py --image path/to/image.png --checkpoint checkpoints/mcpnet_be
 
 ---
 
-## 🔍 Demo Notebook
+## 🔍 Project Notebook
 
-Try the quick-start demo:
-
-```bash
-jupyter notebook notebooks/MCP_Net_demo.ipynb
-```
-
-This runs preprocessing → model inference → visualization on the toy dataset.
+MCP-Net-USG-Arthritis.ipynb: Model development notebook. This runs preprocessing → model inference → visualization on the toy dataset.
 
 ---
-Would you like me to also prepare the **GitHub Release Notes text** (so you can paste it directly when you make your v1.0.0 release)?
-```
