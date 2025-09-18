@@ -110,6 +110,6 @@ python src/infer.py --image path/to/image.png --checkpoint checkpoints/mcpnet_be
 
 ## 🔍 Project Notebook
 
-MCP-Net-USG-Arthritis.ipynb: Model development notebook. This runs preprocessing → model inference → visualization on the toy dataset.
+`MCP-Net-USG-Arthritis.ipynb` Model development notebook. This runs preprocessing → model inference → visualization on the toy dataset.
 
 ---
