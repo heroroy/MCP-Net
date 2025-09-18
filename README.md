@@ -4,7 +4,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 
 > **Note:** This code is directly related to a manuscript submitted to a *Springer Journal*.  
-> Please cite the manuscript if you use this repository in your work.
+> Please cite the manuscript by Title, Author names, and github link: https://github.com/heroroy/MCP-Net if you use this repository in your work.
 
 ---
 
