@@ -55,11 +55,9 @@ MCP-Net/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
-├── CITATION.cff
 ├── configs/
 │   └── train_config.yaml
 ├── src/
-│   ├── __init__.py
 │   ├── dataset.py
 │   ├── model.py
 │   ├── train.py
@@ -67,7 +65,6 @@ MCP-Net/
 │   └── infer.py
 ├── notebooks/
 │   ├── MCP_Net_demo.ipynb
-│   └── setup_demo_data.py
 └── .gitignore
 ```
 
